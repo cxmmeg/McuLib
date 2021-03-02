@@ -33,8 +33,7 @@ void myDelayUS(uint64_t t)
 
 void myDelayMS(uint64_t t)
 {
-	uint32_t i;
-	for(i=0;i<t;i++) myDelayUS(1000);
+  HAL_Delay(t);
 }
 
 
