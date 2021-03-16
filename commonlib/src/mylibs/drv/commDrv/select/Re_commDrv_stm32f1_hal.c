@@ -33,13 +33,14 @@ void myDelayUS(uint64_t t)
 
 void myDelayMS(uint64_t t)
 {
-  HAL_Delay(t);
+	uint32_t i;
+	for(i=0;i<t;i++) myDelayUS(1000);
 }
 
 
 uint32_t myGetMS()
 {
-   return HAL_GetTick(); //获取系统当前时间
+   return HAL_GetTick();
 }
 
 void myCommonInit()

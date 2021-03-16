@@ -1,7 +1,7 @@
 #ifndef __KEYPAD_H__
 #define __KEYPAD_H__
-#include "mylibs\drv\commDrv\Re_commDrv.h"
 #if service_input_keypad
+#include "drv\commDrv\Re_commDrv.h"
 void keypad_init(
     Pin_input_mode mode,
     short cnt_trig,

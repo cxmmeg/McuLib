@@ -1,36 +1,36 @@
 #include "../Re_keypadDrv.h"
 #include "Re_all_config.h"
-#include "Re_nativeInterface.h"
+#include "drv\Re_nativeInterface.h"
 #if mcu_stm32f1_hal
 #if service_input_keypad
-#define ROW0_Pin GPIO_PIN_0
-#define ROW0_GPIO_Port GPIOD
+#define ROW0_Pin GPIO_PIN_8
+#define ROW0_GPIO_Port GPIOB
 
-#define ROW1_Pin GPIO_PIN_1
-#define ROW1_GPIO_Port GPIOD
+#define ROW1_Pin GPIO_PIN_9
+#define ROW1_GPIO_Port GPIOB
 
-#define ROW2_Pin GPIO_PIN_2
-#define ROW2_GPIO_Port GPIOD
+#define ROW2_Pin GPIO_PIN_10
+#define ROW2_GPIO_Port GPIOB
 
-#define ROW3_Pin GPIO_PIN_3
-#define ROW3_GPIO_Port GPIOD
+#define ROW3_Pin GPIO_PIN_11
+#define ROW3_GPIO_Port GPIOB
 
-#define COL0_Pin GPIO_PIN_4
-#define COL0_GPIO_Port GPIOD
+#define COL0_Pin GPIO_PIN_12
+#define COL0_GPIO_Port GPIOB
 
-#define COL1_Pin GPIO_PIN_5
-#define COL1_GPIO_Port GPIOD
+#define COL1_Pin GPIO_PIN_13
+#define COL1_GPIO_Port GPIOB
 
-#define COL2_Pin GPIO_PIN_6
-#define COL2_GPIO_Port GPIOD
+#define COL2_Pin GPIO_PIN_14
+#define COL2_GPIO_Port GPIOB
 
-#define COL3_Pin GPIO_PIN_7
-#define COL3_GPIO_Port GPIOD
+#define COL3_Pin GPIO_PIN_15
+#define COL3_GPIO_Port GPIOB
 
-void keypad_init_hardware(Pin_input_mode index);
+void keypad_init_hardware(Pin_input_mode index)
 {
     GPIO_InitTypeDef GPIO_InitStruct = {0};
-    __HAL_RCC_GPIOD_CLK_ENABLE();
+    __HAL_RCC_GPIOB_CLK_ENABLE();
 
     GPIO_InitStruct.Pin = ROW0_Pin | ROW1_Pin | ROW2_Pin | ROW3_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
